@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LaterCalculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<h1>LaterCalculator Results</h1>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Calculation</th>
+        <th>Result</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="calculation : ${calculations}">
+        <td th:text="${calculation.operands[0] + ' ' + calculation.extractOperationSymbol() + ' ' + calculation.operands[1]}"></td>
+        <td th:text="${calculation.result}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
